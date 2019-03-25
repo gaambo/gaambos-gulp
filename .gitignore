@@ -1,0 +1,8 @@
+# Dependency directories
+/node_modules/
+
+# IDE
+/.vscode
+
+# Output of test files
+/test/dst

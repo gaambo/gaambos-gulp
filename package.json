@@ -1,0 +1,68 @@
+{
+  "name": "gaambos-gulp",
+  "version": "0.3.0",
+  "description": "A gulpfile.js boilerplate used in my WordPress boilerplates and projects. Originally built for WordPress projects but can be used with any web project.",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gaambo/gaambos-gulp.git"
+  },
+  "keywords": [
+    "wpgulp",
+    "gulp",
+    "wordpress",
+    "library"
+  ],
+  "author": "Fabian Todt <fabian@fabiantodt.at>",
+  "license": "SEE LICENSE IN LICENSE",
+  "bugs": {
+    "url": "https://github.com/gaambo/gaambos-gulp/issues"
+  },
+  "scripts": {
+    "test": "jest",
+    "example": "gulp --gulpfile ./examples/gulpfile.babel.js",
+    "full-example": "gulp --gulpfile ./examples/gulpfile-full-babel.babel.js"
+  },
+  "homepage": "https://github.com/gaambo/gaambos-gulp#readme",
+  "devDependencies": {
+    "@babel/register": "^7.4.0",
+    "eslint": "^5.12.1",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-config-prettier": "^4.0.0",
+    "eslint-plugin-import": "^2.16.0",
+    "eslint-plugin-prettier": "^3.0.1",
+    "prettier": "^1.16.3"
+  },
+  "dependencies": {
+    "@babel/core": "^7.3.4",
+    "@babel/preset-env": "^7.3.4",
+    "browser-sync": "^2.11.1",
+    "del": "^4.0.0",
+    "gulp": "^4.0.0",
+    "gulp-autoprefixer": "^6.0.0",
+    "gulp-babel": "^8.0.0",
+    "gulp-concat": "^2.5.2",
+    "gulp-filter": "^5.1.0",
+    "gulp-imagemin": "^4.1.0",
+    "gulp-notify": "^3.0.0",
+    "gulp-plumber": "^1.2.0",
+    "gulp-rename": "^1.2.0",
+    "gulp-rtlcss": "^1.2.0",
+    "gulp-sass": "^4.0.1",
+    "gulp-sort": "^2.0.0",
+    "gulp-sourcemaps": "^2.6.2",
+    "gulp-uglify": "^3.0.0",
+    "gulp-uglifycss": "^1.0.6",
+    "gulp-wp-pot": "^2.0.7",
+    "lazypipe": "^1.0.2",
+    "merge-stream": "^1.0.1"
+  },
+  "jest": {},
+  "files": [
+    "/tasks",
+    "/util",
+    "/examples/src",
+    "/examples/gulpfile.babel.js",
+    "/babel.config.js"
+  ]
+}
