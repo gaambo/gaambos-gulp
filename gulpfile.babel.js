@@ -32,7 +32,8 @@ const config = {
     src: "**/*.js",
     dstDir: "./test/dst/js",
     babelPreset: "@babel/preset-env",
-    bundleName: "bundle"
+    bundleName: "bundle",
+    requires: ["node_modules/lodash/isArray.js"]
   },
   images: {
     srcDir: "./test/src/images",
@@ -124,11 +125,17 @@ export const copyOtherFiles = () => {
 /**
  * Concatenate, compiles and minifies scripts and adds sourcemaps.
  */
-export const scripts = () =>
-  gulp
-    .src(path.join(config.scripts.srcDir, config.scripts.src), {
-      base: config.scripts.srcDir
-    })
+export const scripts = () => {
+  let paths = Array.isArray(config.scripts.src) // ensure src is array
+    ? config.scripts.src
+    : [config.scripts.src];
+  paths = paths.map(p => path.join(config.scripts.srcDir, p)); // prefix srcDir
+  if (config.scripts.requires) {
+    // if external libs/vendor libs insert them before other scripts in bundle
+    paths.unshift(...config.scripts.requires);
+  }
+  return gulp
+    .src(paths)
     .pipe(plumber({ errorHandler }))
     .pipe(sourcemaps.init())
     .pipe(
@@ -144,6 +151,7 @@ export const scripts = () =>
     .pipe(uglifyJS())
     .pipe(sourcemaps.write("./"))
     .pipe(gulp.dest(config.scripts.dstDir));
+};
 
 /**
  * Concatenate, compiles and minifies stiles and adds sourcemaps.
