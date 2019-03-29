@@ -19,9 +19,7 @@
     "url": "https://github.com/gaambo/gaambos-gulp/issues"
   },
   "scripts": {
-    "test": "jest",
-    "example": "gulp --gulpfile ./examples/gulpfile.babel.js",
-    "full-example": "gulp --gulpfile ./examples/gulpfile-full-babel.babel.js"
+    "test": "gulp"
   },
   "homepage": "https://github.com/gaambo/gaambos-gulp#readme",
   "devDependencies": {
