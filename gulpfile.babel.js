@@ -12,7 +12,7 @@ import sourcemaps from "gulp-sourcemaps"; // Maps code in a compressed file (E.g
 import sass from "gulp-sass"; // Gulp plugin for Sass compilation.
 import uglifyCSS from "gulp-uglifycss"; // Minifies CSS files.
 import autoprefixer from "gulp-autoprefixer"; // Autoprefixing magic.
-
+import notify from "gulp-notify";
 import imagemin from "gulp-imagemin"; // Minify PNG, JPEG, GIF and SVG images with imagemin.
 
 import sort from "gulp-sort"; // Recommended to prevent unnecessary changes in pot-file.
