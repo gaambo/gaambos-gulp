@@ -68,7 +68,10 @@ const errorHandler = r => {
 /**
  * Copies some other files (e.g. used for fonts, font-awesome icons,...) into the dist directory
  */
-export const copyOtherFiles = () => {
+export const copyOtherFiles = done => {
+  if (!config.otherFiles || config.otherFiles.length <= 0) {
+    return done();
+  }
   const parsedFiles = [];
 
   /**
